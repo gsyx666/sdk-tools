@@ -1,0 +1,27 @@
+name: Termux sdk
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+#working-directory
+jobs:
+  
+  clone:
+    runs-on: ubuntu-latest
+    name: clone repo
+    steps:
+    - name: clone
+      env:
+        GITHUB_REPO: https://github.com/Lzhiyong/termux-ndk/releases/download/android-sdk/android-sdk.tar.xz
+      run: |
+        wget $GITHUB_REPO
+    - name: Store generated APK file
+      uses: actions/upload-artifact@v2
+      with:
+        name: android-sdk
+        path: android-sdk.tar.xz
+
+    
+    
