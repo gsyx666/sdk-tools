@@ -1,4 +1,4 @@
-The source code from AOSP master branch  
+The source code from AOSP master branch
 
 At first, we cannot directly use the termux to build AOSP, because blueprint and soong compilation fails for aarch64 architecture
 
